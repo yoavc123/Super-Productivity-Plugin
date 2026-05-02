@@ -1,0 +1,65 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "super-productivity",
+  "description": "A Raycast extension for the open-source task manager Super Productivity",
+  "license": "MIT",
+  "scripts": {
+    "dev": "ray develop",
+    "lint": "ray lint",
+    "fix-lint": "ray lint --fix",
+    "build": "ray build",
+    "publish": "npx @raycast/api@latest publish",
+    "prepublishOnly": "echo \"\\n\\nIt seems like you are trying to publish the Raycast extension to npm.\\n\\nIf you did intend to publish it to npm, remove the \\`prepublishOnly\\` script and rerun \\`npm publish\\` again.\\nIf you wanted to publish it to the Raycast Store instead, use \\`npm run publish\\` instead.\\n\\n\" && exit 1"
+  },
+  "dependencies": {
+    "@raycast/api": "^1.103.0",
+    "@raycast/utils": "^2.2.1"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^2.0.4",
+    "@types/node": "22.19.17",
+    "@types/react": "19.0.10",
+    "eslint": "^9.22.0",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.2"
+  },
+  "icon": "extension-icon.png",
+  "commands": [
+    {
+      "name": "show-tags",
+      "title": "Show Tags",
+      "description": "Browse your tags and view tasks with those tags",
+      "mode": "view"
+    },
+    {
+      "name": "show-project",
+      "title": "Show Projects",
+      "description": "Browse your projects and view tasks within those projects",
+      "mode": "view"
+    },
+    {
+      "name": "show-tasks",
+      "title": "Show Tasks",
+      "description": "Browse active tasks and manage them from Raycast",
+      "mode": "view",
+      "subtitle": "List non-completed tasks from Super Productivity"
+    },
+    {
+      "name": "create-new-task",
+      "title": "Create New Task",
+      "description": "Create a task or subtask in Super Productivity",
+      "mode": "view"
+    }
+  ],
+  "title": "Super Productivity",
+  "author": "yoav_cohen",
+  "platforms": [
+    "Windows",
+    "macOS"
+  ],
+  "categories": [
+    "Applications",
+    "Developer Tools",
+    "Productivity"
+  ]
+}
