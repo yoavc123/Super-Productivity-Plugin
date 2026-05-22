@@ -182,6 +182,17 @@ export const getStatus = (): Promise<SpStatus> => request<SpStatus>("/status");
 export const getCurrentTask = (): Promise<SpTask | null> =>
   request<SpTask | null>("/task-control/current");
 
+export const getTask = (id: string): Promise<SpTask> =>
+  request<SpTask>(`/tasks/${id}`);
+
+export const setCurrentTask = (
+  taskId: string | null,
+): Promise<{ currentTaskId: string | null }> =>
+  request<{ currentTaskId: string | null }>("/task-control/current", {
+    method: "POST",
+    body: JSON.stringify({ taskId }),
+  });
+
 export const listTasks = (params: ListTasksParams = {}): Promise<SpTask[]> =>
   request<SpTask[]>(
     `/tasks${toQueryString({
@@ -217,6 +228,11 @@ export const archiveTask = (
   id: string,
 ): Promise<{ archived: true; id: string }> =>
   request<{ archived: true; id: string }>(`/tasks/${id}/archive`, {
+    method: "POST",
+  });
+
+export const restoreTask = (id: string): Promise<SpTask> =>
+  request<SpTask>(`/tasks/${id}/restore`, {
     method: "POST",
   });
 

@@ -31,7 +31,6 @@ export function BrowseEntitiesCommand<T extends BrowseEntity>(
   return (
     <List
       isLoading={isLoading}
-      navigationTitle={props.title}
       searchBarPlaceholder={props.searchBarPlaceholder}
     >
       {error ? (
@@ -48,6 +47,7 @@ export function BrowseEntitiesCommand<T extends BrowseEntity>(
               <ActionPanel>
                 <Action.Push
                   title={`View ${props.title === "Show Tags" ? "Tasks" : "Project Tasks"}`}
+                  icon={Icon.List}
                   target={props.getDetailTarget(item)}
                 />
                 <Action

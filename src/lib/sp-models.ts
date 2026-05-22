@@ -43,6 +43,8 @@ export interface SpTask {
   plannedAt?: number | null;
   timeEstimate: number;
   timeSpent: number;
+  created?: number;
+  repeatCfgId?: string | null;
 }
 
 export interface SpStatus {

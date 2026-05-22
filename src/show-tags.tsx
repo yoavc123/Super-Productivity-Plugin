@@ -18,7 +18,11 @@ export default function Command() {
           : []
       }
       getDetailTarget={(tag) => (
-        <TaskListView title={tag.title} tagId={tag.id} />
+        <TaskListView
+          title={tag.title}
+          navigationTitle={tag.title}
+          tagId={tag.id}
+        />
       )}
     />
   );
